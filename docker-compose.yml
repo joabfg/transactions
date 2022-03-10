@@ -1,0 +1,16 @@
+version: '2'
+services:
+  transactions-server:
+    container_name: transactions-server
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: transactions-server:latest
+    ports:
+      - 8081:8080
+    networks:
+      - spring-cloud-network
+
+networks:
+  spring-cloud-network:
+    driver: bridge
