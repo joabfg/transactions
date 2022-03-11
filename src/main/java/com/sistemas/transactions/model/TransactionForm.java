@@ -1,4 +1,4 @@
-package com.pismo.transactions.model;
+package com.sistemas.transactions.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
-public class TransactionModel {
+public class TransactionForm {
 
     @JsonProperty(value = "account_id")
     private Long accountId;

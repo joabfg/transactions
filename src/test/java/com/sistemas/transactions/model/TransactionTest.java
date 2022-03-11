@@ -1,32 +1,32 @@
-package com.pismo.transactions.model;
+package com.sistemas.transactions.model;
 
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class TransactionUnitTest {
+public class TransactionTest {
 
     @Test
     void dataModelToTransactionTypePagamento(){
-        TransactionModel model = new TransactionModel(
+        TransactionForm form = new TransactionForm(
                 1l,
                 OperationType.PAGAMENTO.getOperationTypeId(),
                 2.0);
-        Transaction transaction = model.toTransaction();
+        Transaction transaction = form.toTransaction();
 
         assertThat(transaction.getAmount() > 0).isTrue();
-        assertThat(transaction.getAccount().getId()).isEqualTo(model.getAccountId());
+        assertThat(transaction.getAccount().getId()).isEqualTo(form.getAccountId());
     }
     @Test
     void dataModelToTransactionTypeSaque(){
-        TransactionModel model = new TransactionModel(
+        TransactionForm form = new TransactionForm(
                 1l,
                 OperationType.SAQUE.getOperationTypeId(),
                 2.0);
-        Transaction transaction = model.toTransaction();
+        Transaction transaction = form.toTransaction();
 
         assertThat(transaction.getAmount() > 0).isFalse();
-        assertThat(transaction.getAccount().getId()).isEqualTo(model.getAccountId());
+        assertThat(transaction.getAccount().getId()).isEqualTo(form.getAccountId());
     }
 
 }

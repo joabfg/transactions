@@ -1,4 +1,4 @@
-package com.pismo.transactions.model;
+package com.sistemas.transactions.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
@@ -10,7 +10,7 @@ import javax.validation.constraints.NotEmpty;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class AccountModel {
+public class AccountForm {
 
     @NotEmpty
     @JsonProperty(value = "document_number")

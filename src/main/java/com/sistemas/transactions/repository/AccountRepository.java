@@ -1,6 +1,6 @@
-package com.pismo.transactions.repository;
+package com.sistemas.transactions.repository;
 
-import com.pismo.transactions.model.Account;
+import com.sistemas.transactions.model.Account;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface AccountRepository extends JpaRepository<Account, Long> {

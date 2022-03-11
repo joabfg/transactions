@@ -1,12 +1,9 @@
-package com.pismo.transactions.service;
+package com.sistemas.transactions.service;
 
-import com.pismo.transactions.model.OperationType;
-import com.pismo.transactions.model.Transaction;
-import com.pismo.transactions.repository.AccountRepository;
-import com.pismo.transactions.repository.TransactionRepository;
+import com.sistemas.transactions.model.Transaction;
+import com.sistemas.transactions.repository.AccountRepository;
+import com.sistemas.transactions.repository.TransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service

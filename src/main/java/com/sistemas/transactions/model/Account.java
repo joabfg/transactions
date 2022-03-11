@@ -1,4 +1,4 @@
-package com.pismo.transactions.model;
+package com.sistemas.transactions.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;

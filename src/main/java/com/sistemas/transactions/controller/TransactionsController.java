@@ -1,21 +1,15 @@
-package com.pismo.transactions.controller;
+package com.sistemas.transactions.controller;
 
-import com.pismo.transactions.model.Account;
-import com.pismo.transactions.model.AccountModel;
-import com.pismo.transactions.model.Transaction;
-import com.pismo.transactions.model.TransactionModel;
-import com.pismo.transactions.repository.AccountRepository;
-import com.pismo.transactions.repository.TransactionRepository;
-import com.pismo.transactions.service.TransactionService;
+import com.sistemas.transactions.model.Transaction;
+import com.sistemas.transactions.model.TransactionForm;
+import com.sistemas.transactions.repository.TransactionRepository;
+import com.sistemas.transactions.service.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/transactions")
@@ -28,7 +22,7 @@ public class TransactionsController {
     TransactionService transactionService;
 
     @PostMapping("")
-    public ResponseEntity<Transaction> createTutorial(@Valid @RequestBody TransactionModel model) {
+    public ResponseEntity<Transaction> createTransaction(@Valid @RequestBody TransactionForm model) {
         try {
             Transaction transaction = transactionService.create(model.toTransaction());
             return new ResponseEntity<>(transaction, HttpStatus.CREATED);

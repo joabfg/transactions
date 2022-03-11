@@ -1,8 +1,8 @@
-package com.pismo.transactions.controller;
+package com.sistemas.transactions.controller;
 
-import com.pismo.transactions.model.Account;
-import com.pismo.transactions.model.AccountModel;
-import com.pismo.transactions.repository.AccountRepository;
+import com.sistemas.transactions.model.Account;
+import com.sistemas.transactions.model.AccountForm;
+import com.sistemas.transactions.repository.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -47,7 +47,7 @@ public class AccountController {
 
 
     @PostMapping("")
-    public ResponseEntity<Account> createTutorial(@Valid @RequestBody AccountModel model) {
+    public ResponseEntity<Account> createAccount(@Valid @RequestBody AccountForm model) {
         try {
             if(accountRepository.existsByDocumentNumber(model.getDocumentNumber()))
                 return new ResponseEntity("document is in use.", HttpStatus.UNPROCESSABLE_ENTITY);
